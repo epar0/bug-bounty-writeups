@@ -20,7 +20,7 @@ This writeup details a fascinating 3-stage vulnerability lifecycle discovered in
 
 ### The Discovery
 While inspecting the client-side JavaScript logic handling modals and popups, I noticed the openPopupUrl parameter being directly read from the URL and passed into a DOM attribute without adequate sanitization:
-
+```
 $(document).ready(function() {
     var url = getPageParameter("openPopupUrl");
     if(url){
@@ -28,7 +28,7 @@ $(document).ready(function() {
         $('#autoopenpopup').click();
     }
 });
-
+```
 ### The Flaw
 Because the parameter accepted arbitrary URI schemes, it was immediately clear that supplying javascript: URIs would execute JavaScript within the application's origin, while data: or external HTTP/HTTPS URIs would trigger an Open Redirect and UI spoofing.
 
