@@ -1,7 +1,7 @@
 # From Reflected XSS & Iframe Injection to Feature Removal: A 3-Stage Patch Bypass
 
 - **Target:** https://redacted.com/
-- **Vulnerable Endpoint:** /create-order
+- **Vulnerable Endpoint:** /path/create-order
 - **Vulnerable Parameter:** openPopupUrl
 - **Severity:** Medium (Reflected XSS, Iframe Injection, Phishing)
 - **Outcome:** 3x Bug Bounty Rewards and Complete Feature Removal
